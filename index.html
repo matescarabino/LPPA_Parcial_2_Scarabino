@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reseter.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/reseter.css">
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/style_login.css">
 
-    <title>Parcial 2 Scarabino</title>
-</head>
-<body>
-    <h1>Parcial 2 Scarabino</h1>
+        <title>Inicio de sesión</title>
+    </head>
+    <body>
+        <header>
+            <h1>Inicio de sesión</h1>
+        </header>
 
-    <script src="./js/app.js"></script>
-</body>
+        <section>
+            <div class="contenido">
+                <form class="card" name="formulario" id="formulario">
+                    <h2 class="card__title">iniciar sesión</h2>
+
+                    <div class="card__campo">
+                        <label class="card__campo__label" for="Email">Email</label>
+                        <input class="card__campo__input" type="text" id="emailInput">
+                        <div class="card__campo__error" id="errorMail">&nbsp;</div>
+                    </div>
+
+                    <div class="card__campo">
+                        <label class="card__campo__label" for="contrasenia">Contraseña</label>
+                        <input class="card__campo__input" type="password" id="contraseniaInput">
+                        <div class="card__campo__error" id="errorContrasenia">&nbsp;</div>
+                    </div>
+
+                    <div class="card__button">
+                        <button>Enviar</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="modalRegistro" class="modal">
+
+            <div class="modal_content">
+                <p class="modal_message" id="mensaje"></p>
+                <p class="modal_close" id="close">ACEPTAR</p>
+            </div>
+
+        </div>
+
+        <footer id="nosotros">
+            <a href="https://matescarabino.github.io/CV/" target="_blank">SCARABINO MATEO</a>
+        </footer>
+
+        <script src="./js/login.js"></script>
+    </body>
 </html>
