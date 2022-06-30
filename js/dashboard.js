@@ -1,3 +1,5 @@
+//Metodo GET 
+
 function obtenerUsuarios() {
     let url = 'https://basic-server-one.vercel.app/users';
     fetch(url)
@@ -12,23 +14,21 @@ function obtenerUsuarios() {
 
         let body = ""
         for (var i = 0; i < data.data.length; i++) {
-            body += `<tr>
-                        <td>${data.data[i].id}</td>
-                        <td>${data.data[i].name}</td>
-                        <td>${data.data[i].username}</td>
-                        <td>${data.data[i].email}</td>
-                        <td>${data.data[i].phone}</td>
-                        <td>${data.data[i].website}</td>
-                        <td>${data.data[i].address["city"]}</td>
-                        <td>${data.data[i].address["street"] + ' ' + data.data[i].address["suite"]}</td>
-                        <td>${data.data[i].company["name"]}</td>
-                        </tr>`
+            body += `<tr role="row">
+                        <td data-label="NOMBRE">${data.data[i].name}</td>
+                        <td data-label="USUARIO">${data.data[i].username}</td>
+                        <td data-label="SITIO WEB">${data.data[i].website}</td>
+                        <td data-label="CIUDAD">${data.data[i].address["city"]}</td>
+                    </tr>`
         }
         document.getElementById('data').innerHTML = body
     }
 
     const mostrarError = (error)  => {
         let body = ""
+        body += 'Error: ' + error.message
+        document.getElementById('error').innerHTML = body
+
 
     }
 }

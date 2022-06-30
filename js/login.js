@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    consultaUsuario()
+    consultaEstadoLogin()
 
     //Llamo a la función  que realiza las validaciones onFocus/onBlur
     validacionesOnFocus();
@@ -74,41 +74,47 @@ window.onload = function () {
         let parametroMail = mail.value;
         let parametroContrasenia = contrasenia.value;
 
-        obtenerDatos(parametroMail,parametroContrasenia);
+        //LLamo al metodo validarDatos y le paso como parametro los imputs del formulario
+        validarDatos(parametroMail,parametroContrasenia);
 
         //Al poner esta línea impido que se envie el formulario, y así que se cierre/refresque el Modal (a su vez el modal tiene el código necesario para cerrar y finalizar el submit)
         event.preventDefault();
     }
 
     
-        //Metodo GET 
-        function obtenerDatos(parametroMail,parametroContrasenia) {
-            fetch("https://basic-server-one.vercel.app/login", {
-                method: "POST",
-                body: JSON.stringify({
-                    email: parametroMail,
-                    password: parametroContrasenia
-                })
+    //Metodo POST 
+    function validarDatos(parametroMail, parametroContrasenia) {
+        fetch("https://basic-server-one.vercel.app/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: parametroMail, //'valeria@gmail.com',
+                password: parametroContrasenia //'lppa2022' 
             })
+        })
+
+            .then(res => res.json())
             .then(data => mostrarData(data))
-            .catch(error => mostrarError(error))
-                
+            .catch(error => console.error(error))
 
-            const mostrarData = (data) => {
-                let body = ""
-                body += `${data.mail}`
-                document.getElementById('data').innerHTML = `LOGIN EXITOSO`
-                document.getElementById('data').innerHTML = body
-            }
 
-            const mostrarError = (error) => {
-                let body = ""
-                body += `LOGIN EXITOSO`
-                document.getElementById('error').innerHTML = body
+
+        const mostrarData = (data) => {
+   
+            if(data.error == false ){
+                document.getElementById('mensaje').innerHTML = 'LOGIN EXITOSO'
+            }else{
+                document.getElementById('mensaje').innerHTML = 'LOGIN FALLIDO'
+                document.getElementById('mensaje').style.backgroundColor = 'red';
+                document.getElementById('response').style.color = 'red';
             }
-            
-            mostarModal();
+            document.getElementById('response').innerHTML = `${data.message}`
         }
+
+        mostarModal();
+    }
 
     //Declaro la función mostrarModal()
     function mostarModal() {
@@ -135,10 +141,10 @@ window.onload = function () {
     }
 
     
-    function consultaUsuario(){
-        let login = true;
+    function consultaEstadoLogin(){
+        let login = false;
 
-        if(login = true){
+        if(login == true){
             window.location.href = "./html/dashboard.html";
         }
     }
