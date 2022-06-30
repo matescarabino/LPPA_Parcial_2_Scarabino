@@ -6,11 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reseter.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/style_dashboard.css">
 
     <title>Dashboard</title>
 </head>
 <body>
-    <h1>Dashboard</h1>
+    <header>
+        <h1>Dashboard</h1>    
+    </header>
+
+    <section>
+        <div class="contenido">    
+            <div class="card">
+                <h2 class="card__title">Lista usuarios</h2>
+                <table id="tabla">
+                    <thead>
+                        <!-- muestro datos mas relevantes -->
+                        <tr> 
+                            <th>id</th>
+                            <th>nombre</th>
+                            <th>usuario</th>
+                            <th>mail</th>
+                            <th>telefono</th>
+                            <th>sitio web</th>
+                            <th>ciudad</th>
+                            <th>direccion</th>
+                            <th>compania</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="nosotros">
+        <a href="https://matescarabino.github.io/CV/" target="_blank">SCARABINO MATEO</a>
+    </footer>
 
     <script src="../js/dashboard.js"></script>
 </body>
