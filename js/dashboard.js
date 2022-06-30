@@ -1,5 +1,12 @@
-//Metodo GET 
+window.onload = function () {
 
+    consultaEstadoLogin();
+
+    obtenerUsuarios();
+
+}
+
+//Metodo GET 
 function obtenerUsuarios() {
     let url = 'https://basic-server-one.vercel.app/users';
     fetch(url)
@@ -33,4 +40,19 @@ function obtenerUsuarios() {
     }
 }
 
-obtenerUsuarios();
+
+function logOut(){
+    localStorage.setItem('login', false);
+    window.location.href = "../index.html";
+
+}
+
+function consultaEstadoLogin(){
+    
+    let login = localStorage.getItem('login');
+    
+    if(login != 'true'){
+        window.location.href = "../index.html";
+    }
+
+}

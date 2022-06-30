@@ -1,5 +1,5 @@
 window.onload = function () {
-
+    
     consultaEstadoLogin()
 
     //Llamo a la función  que realiza las validaciones onFocus/onBlur
@@ -15,7 +15,6 @@ window.onload = function () {
             if (!mail.value.match(mail_format)) {
                 mail.classList.add('invalid');
                 errorMail.innerHTML = 'Ingrese un email válido.'
-
             }
         };
         mail.onfocus = function () {
@@ -33,8 +32,7 @@ window.onload = function () {
         contrasenia.onblur = function () {
             if (!contrasenia.value.match(contrasenia_format)) {
                 contrasenia.classList.add('invalid');
-                errorContrasenia.innerHTML = 'Debe contener por lo menos un numero, una mayuscula, una minuscula y como minimo 8 caracteres.'
-
+                errorContrasenia.innerHTML = 'Debe contener por lo menos una minuscula, un numero y como minimo 8 caracteres.'
             }
         };
         contrasenia.onfocus = function () {
@@ -66,7 +64,7 @@ window.onload = function () {
 
         if (!contrasenia.value.match(contrasenia_format) || (contrasenia.value == "")) {
             contrasenia.classList.add('invalid');
-            errorContrasenia.innerHTML = 'Debe contener por lo menos un numero, una mayuscula, una minuscula y como minimo 8 caracteres.'
+            errorContrasenia.innerHTML = 'Debe contener por lo menos una minuscula, un numero y como minimo 8 caracteres.'
             return false;
         }
 
@@ -94,17 +92,16 @@ window.onload = function () {
                 password: parametroContrasenia //'lppa2022' 
             })
         })
-
             .then(res => res.json())
             .then(data => mostrarData(data))
             .catch(error => console.error(error))
-
-
 
         const mostrarData = (data) => {
    
             if(data.error == false ){
                 document.getElementById('mensaje').innerHTML = 'LOGIN EXITOSO'
+                //guardo en el localStorage una variable booleana para confirmar que el login fue exitoso
+                localStorage.setItem('login', true);
             }else{
                 document.getElementById('mensaje').innerHTML = 'LOGIN FALLIDO'
                 document.getElementById('mensaje').style.backgroundColor = 'red';
@@ -114,6 +111,8 @@ window.onload = function () {
         }
 
         mostarModal();
+
+        consultaEstadoLogin();
     }
 
     //Declaro la función mostrarModal()
@@ -140,11 +139,11 @@ window.onload = function () {
         }
     }
 
-    
     function consultaEstadoLogin(){
-        let login = false;
 
-        if(login == true){
+        let login = localStorage.getItem('login');
+        
+        if(login == 'true'){
             window.location.href = "./html/dashboard.html";
         }
     }
