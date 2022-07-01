@@ -1,10 +1,10 @@
 window.onload = function () {
-    
+
     consultaEstadoLogin()
 
     //Llamo a la función  que realiza las validaciones onFocus/onBlur
     validacionesOnFocus();
-        
+
     //Declaro la función  que realiza las validaciones onFocus/onBlur
     function validacionesOnFocus() {
         // Validación Mail ------------------------------------------------------------------------
@@ -64,7 +64,7 @@ window.onload = function () {
 
         if (!contrasenia.value.match(contrasenia_format) || (contrasenia.value == "")) {
             contrasenia.classList.add('invalid');
-            errorContrasenia.innerHTML = 'Debe contener por lo menos una minuscula, un numero y como minimo 8 caracteres.'
+            errorContrasenia.innerHTML = 'Debe contener por lo menos una minúscula, un número y como mínimo 8 caracteres.'
             return false;
         }
 
@@ -75,12 +75,12 @@ window.onload = function () {
         //LLamo al metodo validarDatos y le paso como parametro los imputs del formulario
         validarDatos(parametroMail,parametroContrasenia);
 
-        //Al poner esta línea impido que se envie el formulario, y así que se cierre/refresque el Modal (a su vez el modal tiene el código necesario para cerrar y finalizar el submit)
+        //Al poner esta línea impido que se envie el formulario, y así que se cierre/refresque el mensaje de error
         event.preventDefault();
     }
 
-    
-    //Metodo POST 
+
+    //Metodo POST
     function validarDatos(parametroMail, parametroContrasenia) {
         fetch("https://basic-server-one.vercel.app/login", {
             method: "POST",
@@ -88,8 +88,8 @@ window.onload = function () {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                email: parametroMail, //'valeria@gmail.com',
-                password: parametroContrasenia //'lppa2022' 
+                email: parametroMail, 
+                password: parametroContrasenia
             })
         })
             .then(res => res.json())
@@ -97,52 +97,27 @@ window.onload = function () {
             .catch(error => console.error(error))
 
         const mostrarData = (data) => {
-   
+
             if(data.error == false ){
-                document.getElementById('mensaje').innerHTML = 'LOGIN EXITOSO'
                 //guardo en el localStorage una variable booleana para confirmar que el login fue exitoso
                 localStorage.setItem('login', true);
+                localStorage.setItem('user', parametroMail);
+                window.location.href = "./html/dashboard.html";
+
             }else{
-                document.getElementById('mensaje').innerHTML = 'LOGIN FALLIDO'
-                document.getElementById('mensaje').style.backgroundColor = 'red';
-                document.getElementById('response').style.color = 'red';
+                document.getElementById('mensaje_error').innerHTML = `${data.message}`
             }
-            document.getElementById('response').innerHTML = `${data.message}`
+
         }
 
-        mostarModal();
-
-        consultaEstadoLogin();
     }
 
-    //Declaro la función mostrarModal()
-    function mostarModal() {
-        // Ejecuto modal -----------------------------------------------------------
-        let modal = document.getElementById("modalRegistro");
-        let span = document.getElementById("close");
 
-        // Lo hago visible
-        modal.style.display = "block";
-
-        // Si clickea el "botón" de aceptar escondo el modal
-        span.onclick = function () {
-            modal.style.display = "none";
-            document.getElementById("formulario").submit();
-        }
-
-        // Si clickea fuera del modal, lo escondo
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-                document.getElementById("formulario").submit();
-            }
-        }
-    }
 
     function consultaEstadoLogin(){
-
+        //me traigo del localStorage la variable booleana para confirmar si ya esta logeado
         let login = localStorage.getItem('login');
-        
+
         if(login == 'true'){
             window.location.href = "./html/dashboard.html";
         }

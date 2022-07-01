@@ -29,3 +29,9 @@
 #errorMail ,#errorContrasenia{
     color: red
 }
+
+.card__mensaje_error{
+    margin-bottom: 150px;
+    color: red;
+    border: 1px solid white;
+}

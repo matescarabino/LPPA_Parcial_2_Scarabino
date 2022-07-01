@@ -13,6 +13,7 @@
 <body>
     <header>
         <h1>Parcial 2 LPPA - Scarabino</h1>
+        <p class="user" id="user"></p>
         <div class="card__button">
             <button onclick="logOut(); return false;">Cerrar sesión</button>
         </div>
@@ -21,8 +22,8 @@
     <section>
         <div class="contenido">    
             <div class="card">
-                <h2 class="card__title">Lista usuarios</h2>
-                <h3 id="error"></h3>
+                <h2 class="card__title">Lista de usuarios</h2>
+                <h3 class="card__mensaje_error" id="error"></h3>
                 <table id="tabla" border="1">
                     <thead>
                         <!-- muestro datos mas relevantes -->

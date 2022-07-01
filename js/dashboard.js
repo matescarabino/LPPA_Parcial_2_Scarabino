@@ -50,9 +50,14 @@ function logOut(){
 function consultaEstadoLogin(){
     
     let login = localStorage.getItem('login');
-    
+    let user = localStorage.getItem('user');
+
     if(login != 'true'){
         window.location.href = "../index.html";
     }
+
+    document.getElementById('user').innerHTML = ('Bienvenido/a ' + user)
+
+
 
 }

@@ -1,5 +1,6 @@
 
 table {
+    display: none;
 	border: 1px solid #ccc;
 	width: 100%;
 	margin-bottom: 20px;
@@ -34,10 +35,19 @@ table th {
     border: 1px solid #000;
     font-weight: 600;
 }
+.user{
+    margin-top: 20px;
+    color: #fff;
+}
 
+.card__mensaje_error{
+    margin-bottom: 20px;
+    color: red;
+    border: 1px solid white;
+}
 /*//////////////////////////////////////////////*/
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width:520px) {
 	table {
 		border:0;
 	}
