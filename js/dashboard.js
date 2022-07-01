@@ -4,6 +4,7 @@ window.onload = function () {
 
     obtenerUsuarios();
 
+
 }
 
 //Metodo GET 
@@ -43,6 +44,8 @@ function obtenerUsuarios() {
 
 function logOut(){
     localStorage.setItem('login', false);
+    localStorage.setItem('user', '');
+
     window.location.href = "../index.html";
 
 }
@@ -56,8 +59,11 @@ function consultaEstadoLogin(){
         window.location.href = "../index.html";
     }
 
-    document.getElementById('user').innerHTML = ('Bienvenido/a ' + user)
-
-
-
+    document.getElementById('user').innerHTML = (user)
 }
+
+var dd_main = document.querySelector(".dd_main");
+
+dd_main.addEventListener("click", function(){
+    this.classList.toggle("active");
+})

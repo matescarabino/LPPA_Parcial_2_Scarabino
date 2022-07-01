@@ -1,4 +1,4 @@
-
+/*----------- Tabla -------------------*/
 table {
     display: none;
 	border: 1px solid #ccc;
@@ -7,14 +7,11 @@ table {
 	padding: 0;
 	border-collapse: collapse;
 	border-spacing: 0;
-
-
+	border: 1px solid #000;
 }
 
 table tr {
 	padding: 5px;
-    border-right: 1px solid #000;
-    border-left: 1px solid #000;
 }
 
 table tr:nth-child(even) {
@@ -24,8 +21,6 @@ table tr:nth-child(even) {
 table td, table th {
 	padding: 10px;
 	text-align: start;
-    border-right: 1px solid #000;
-
 }
 
 table th {
@@ -35,9 +30,41 @@ table th {
     border: 1px solid #000;
     font-weight: 600;
 }
+
+/*---------------------------------*/
+header{
+    text-align: end;
+}
 .user{
-    margin-top: 20px;
+	display: flex;
+    flex-direction: column;
+	justify-content: end;
+    text-align: end;
     color: #fff;
+	border: 1px solid red;
+}
+.user p {
+	align-self: end;
+	border: 1px solid red;
+
+}
+.card__button{
+	width: auto;
+	align-self: end;
+
+}
+.card__button button {
+    width: 120px;
+    padding: 2px;
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0px;
+    font-weight: bold;
+    color: #007282;
+    background-color: #fff;
+    border: 2px solid #007282;
+    cursor: pointer;
+    outline: none;
 }
 
 .card__mensaje_error{
@@ -56,6 +83,7 @@ table th {
 		margin-bottom: 10px;
 		display: block;
 		border-bottom: 2px solid #ddd;
+		border: 1px solid #000;
 
 	}
 
@@ -80,4 +108,70 @@ table th {
 	table thead {
 		display: none;
 	}
+}
+
+.navbar{
+	background: #007282;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+
+.navbar .nav_right > ul{
+	display: flex;
+	align-items: center;
+}
+
+.navbar .nav_right ul li.nr_li{
+	margin-left: 10px;
+	cursor: pointer;
+	font-size: 20px;
+	position: relative;
+}
+
+.navbar .nav_right ul li.nr_li:hover {
+    color: #007282;
+}
+
+.navbar .nav_right ul li img{
+	width: 40px;
+	vertical-align: middle;
+}
+
+.navbar .dd_menu {
+    position: absolute;
+    right: -21px;
+    top: 47px;
+    display: flex;
+    background: #f2f2f2;
+    display: none;
+	border: 1px solid #000;
+
+
+}
+
+.navbar .dd_menu .dd_right li, p{
+	padding: 10px;
+	color: #000;
+
+}
+.dd_right li:hover{
+	color:#fff;
+	background-color: #007282;
+}
+
+.navbar .dd_menu:before{
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 30px;
+	border: 10px solid;
+	border-color: transparent transparent #f2f2f2 transparent;
+}
+
+.navbar .dd_main.active .dd_menu{
+	display: flex;
 }

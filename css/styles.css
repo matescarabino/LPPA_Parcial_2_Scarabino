@@ -1,20 +1,30 @@
 /*------------------------- Comienza Mi CSS ------------------------------*/
-
+html{
+    display: flex;
+    justify-content: space-around;
+}
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: Arial;
+    border: 1px solid #000;
 }
 
 header {
+    display: flex;
+    flex-direction: column;
     padding: 30px;
-    text-align: center;
     background: #007282;
 }
 
 h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
-
 }
 
 section {
@@ -44,10 +54,7 @@ section {
     justify-content: center;
     width: 80%;
     font-size: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 10% 10px 10%;
     font-weight: bold;
     text-transform: uppercase;
     padding: 5px;
@@ -83,9 +90,9 @@ section {
 
 /*------------------ footer ----------------------------*/
 footer {
-    position: 0;
-    padding: 30px;
     text-align: center;
+    margin-top: auto;
+    padding: 30px;
     background: #007282;
 }
 
@@ -94,10 +101,20 @@ footer a {
     color: #fff;
 }
 
-/*==================Tablet / PC ==================*/
-@media (min-width: 480px) {
-    .card {
-        width:480px;
+/*================== tablet ==================*/
+@media (min-width: 768px) {
+    body{
+        width: 768px;
     }
 
+}
+
+/*================== PC ==================*/
+@media (min-width: 1024px) {
+    body{
+        width: 1024px;
+    }
+    .card {
+        width: 768px;
+    }
 }

@@ -1,52 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/reseter.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/style_dashboard.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/reseter.css">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/style_dashboard.css">
 
-    <title>Dashboard</title>
-</head>
-<body>
-    <header>
-        <h1>Parcial 2 LPPA - Scarabino</h1>
-        <p class="user" id="user"></p>
-        <div class="card__button">
-            <button onclick="logOut(); return false;">Cerrar sesión</button>
-        </div>
-    </header>
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <header>
+            <!-- <div class="user">
+                <p id="user"></p>
+                <div class="card__button">
+                    <button onclick="logOut(); return false;">Cerrar sesión</button>
+                </div>
+            </div> -->
+            <div class="wrapper">
+                <div class="navbar">
+                    <div class="logo">
+                        <h1>Parcial 2 LPPA</h1>
+                    </div>
+                    <div class="nav_right">
+                        <ul>
+                            <li class="nr_li dd_main">
+                                <img src="../imagenes/user.png" alt="profile_img">
+                                <div class="dd_menu">
+                                    <div class="dd_right">
+                                        <ul>
+                                            <p id="user"></p>
+                                            <li onclick="logOut(); return false;">Logout</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>	
+        </header>
 
-    <section>
-        <div class="contenido">    
-            <div class="card">
-                <h2 class="card__title">Lista de usuarios</h2>
-                <h3 class="card__mensaje_error" id="error"></h3>
-                <table id="tabla" border="1">
-                    <thead>
-                        <!-- muestro datos mas relevantes -->
-                        <tr> 
-                            <th>nombre</th>
-                            <th>usuario</th>
-                            <th>sitio web</th>
-                            <th>ciudad</th>
-                        </tr>
-                    </thead>
+        <section>
+            <div class="contenido">    
+                <div class="card">
+                    <h2 class="card__title">Lista de usuarios</h2>
+                    <h3 class="card__mensaje_error" id="error"></h3>
+                    <table id="tabla" border="1">
+                        <thead>
+                            <!-- muestro datos mas relevantes -->
+                            <tr> 
+                                <th>nombre</th>
+                                <th>usuario</th>
+                                <th>sitio web</th>
+                                <th>ciudad</th>
+                            </tr>
+                        </thead>
 
-                    <tbody id="data">
-                    </tbody>
-                </table>
+                        <tbody id="data">
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <footer id="nosotros">
-        <a href="https://matescarabino.github.io/CV/" target="_blank">SCARABINO MATEO</a>
-    </footer>
+        <footer id="nosotros">
+            <a href="https://matescarabino.github.io/CV/" target="_blank">SCARABINO MATEO</a>
+        </footer>
 
-    <script src="../js/dashboard.js"></script>
-</body>
+        <script src="../js/dashboard.js"></script>
+    </body>
 </html>
