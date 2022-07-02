@@ -12,7 +12,7 @@ window.onload = function () {
         let mail_format = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 
         mail.onblur = function () {
-            if (!mail.value.match(mail_format)) {
+            if (!((mail.value).toLowerCase()).match(mail_format)) {
                 mail.classList.add('invalid');
                 errorMail.innerHTML = 'Ingrese un email válido.'
             }
@@ -52,7 +52,7 @@ window.onload = function () {
         let mail = document.getElementById('emailInput');
         let mail_format = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 
-        if (!mail.value.match(mail_format) || (mail.value == "")) {
+        if (!(((mail.value).toLowerCase()).match(mail_format)) || (mail.value == "")) {
             mail.classList.add('invalid');
             errorMail.innerHTML = 'Ingrese un email válido.';
             return false;
@@ -69,7 +69,7 @@ window.onload = function () {
         }
 
 
-        let parametroMail = mail.value;
+        let parametroMail = (mail.value).toLowerCase();
         let parametroContrasenia = contrasenia.value;
 
         //LLamo al metodo validarDatos y le paso como parametro los imputs del formulario

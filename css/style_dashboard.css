@@ -32,82 +32,11 @@ table th {
 }
 
 /*---------------------------------*/
-header{
-    text-align: end;
-}
-.user{
-	display: flex;
-    flex-direction: column;
-	justify-content: end;
-    text-align: end;
-    color: #fff;
-	border: 1px solid red;
-}
-.user p {
-	align-self: end;
-	border: 1px solid red;
-
-}
-.card__button{
-	width: auto;
-	align-self: end;
-
-}
-.card__button button {
-    width: 120px;
-    padding: 2px;
-    font-size: 14px;
-    text-transform: none;
-    letter-spacing: 0px;
-    font-weight: bold;
-    color: #007282;
-    background-color: #fff;
-    border: 2px solid #007282;
-    cursor: pointer;
-    outline: none;
-}
 
 .card__mensaje_error{
     margin-bottom: 20px;
     color: red;
     border: 1px solid white;
-}
-/*//////////////////////////////////////////////*/
-
-@media screen and (max-width:520px) {
-	table {
-		border:0;
-	}
-
-	table tr {
-		margin-bottom: 10px;
-		display: block;
-		border-bottom: 2px solid #ddd;
-		border: 1px solid #000;
-
-	}
-
-	table td {
-		display: block;
-		text-align: right;
-		font-size: 16px;
-		border-bottom: 1px dotted #ccc;
-	}
-
-	table td:last-child {
-		border-bottom: 0;
-	}
-
-	table td:before {
-		content: attr(data-label);
-		float: left;
-		text-transform: uppercase;
-		font-weight: 600;
-	}
-
-	table thead {
-		display: none;
-	}
 }
 
 .navbar{
@@ -117,8 +46,6 @@ header{
 	justify-content: space-between;
 	align-items: center;
 }
-
-
 
 .navbar .nav_right > ul{
 	display: flex;
@@ -149,18 +76,17 @@ header{
     background: #f2f2f2;
     display: none;
 	border: 1px solid #000;
-
-
 }
 
 .navbar .dd_menu .dd_right li, p{
 	padding: 10px;
 	color: #000;
-
 }
-.dd_right li:hover{
-	color:#fff;
+
+.dd_right p:hover{
 	background-color: #007282;
+	color: #fff;
+	border-top: 1px solid #000;
 }
 
 .navbar .dd_menu:before{
@@ -174,4 +100,40 @@ header{
 
 .navbar .dd_main.active .dd_menu{
 	display: flex;
+}
+/*//////////////////////////////////////////////*/
+
+@media screen and (max-width:520px) {
+	table {
+		border:0;
+	}
+
+	table tr {
+		margin-bottom: 10px;
+		display: block;
+		border-bottom: 2px solid #ddd;
+		border: 1px solid #000;
+	}
+
+	table td {
+		display: block;
+		text-align: right;
+		font-size: 16px;
+		border-bottom: 1px dotted #ccc;
+	}
+
+	table td:last-child {
+		border-bottom: 0;
+	}
+
+	table td:before {
+		content: attr(data-label);
+		float: left;
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+
+	table thead {
+		display: none;
+	}
 }

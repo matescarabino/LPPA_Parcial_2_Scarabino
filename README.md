@@ -30,7 +30,7 @@ Esta función válida que los datos ingresados sean válidos (el único usuario 
 
 - Una vez en el Dashboard se ejecutará una función GET que traera un .json con datos de usuario, para luego convertirlo en un objeto y poder mostrarlo en una tabla html a través del DOM.
 
-- En el Header del Dashboard contaremos con un menú desplegable el cual nos muestra el mail de usuario previamente ingresado (guardado en localStorage) y un botón de logOut, el cual setea en localStorage login=false y nos redirige al login nuevamente. Por lo cual al estar la variable Local "login" como falsa, la función que verifica esto no nos redirige al Dashboard.
+- En el Header del Dashboard contaremos con un menú desplegable el cual nos muestra el mail de usuario previamente ingresado (guardado en localStorage) y un botón de Cerrar Sesión, el cual setea en localStorage login=false y nos redirige al login nuevamente. Por lo cual al estar la variable Local "login" como falsa, la función que verifica esto no nos redirige al Dashboard.
 
 ### Extras 🔩
 
@@ -47,8 +47,6 @@ Esta función válida que los datos ingresados sean válidos (el único usuario 
 - HTML 
 - CSS 
 - JavaScript
-* [Fontawesome](https://fontawesome.com/) - iconos y fuentes
-
 
 ## Autores ✒️
 
