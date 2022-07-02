@@ -33,6 +33,7 @@ Esta función válida que los datos ingresados sean válidos (el único usuario 
 - En el Header del Dashboard contaremos con un menú desplegable el cual nos muestra el mail de usuario previamente ingresado (guardado en localStorage) y un botón de Cerrar Sesión, el cual setea en localStorage login=false y nos redirige al login nuevamente. Por lo cual al estar la variable Local "login" como falsa, la función que verifica esto no nos redirige al Dashboard.
 
 ### Extras 🔩
+- El diseño es responsivo
 
 - En login.js primero se ejecuta una función que valida el estado de la variable en localStorage "login", si esta es verdadera (true), nos redirigirá directamente al Dashboard sin pasar por el login.
 
@@ -43,6 +44,7 @@ Esta función válida que los datos ingresados sean válidos (el único usuario 
 - En dashboard.js primero se ejecuta una función que valida el estado de la variable en localStorage "login", si esta es falsa (false), nos redirigirá directamente al login. Así nos aseguramos de que nadie pueda saltarse el login por escribir en el navegador el link: [https://matescarabino.github.io/LPPA_Parcial_2_Scarabino/html/dashboard.html](https://matescarabino.github.io/LPPA_Parcial_2_Scarabino/html/dashboard.html)
 
 - Tanto el login como el dashboard cuentan con una animación de carga mientras se espera el fetch, ya que, haciendo pruebas, me di cuenta de que la gente no entendía que estaba cargando.
+
 
 ## Construido con 🛠️
 
