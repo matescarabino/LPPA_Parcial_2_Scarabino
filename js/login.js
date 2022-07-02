@@ -48,6 +48,7 @@ window.onload = function () {
     //Validación on Submit --------------------------------------------------------------------
     document.formulario.onsubmit = function (event) {
 
+
         //Validación Email --------------------------------------------------------------------
         let mail = document.getElementById('emailInput');
         let mail_format = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
@@ -72,6 +73,7 @@ window.onload = function () {
         let parametroMail = (mail.value).toLowerCase();
         let parametroContrasenia = contrasenia.value;
 
+
         //LLamo al metodo validarDatos y le paso como parametro los imputs del formulario
         validarDatos(parametroMail,parametroContrasenia);
 
@@ -82,6 +84,12 @@ window.onload = function () {
 
     //Metodo POST
     function validarDatos(parametroMail, parametroContrasenia) {
+        let loader =  document.getElementById('loader');
+        let mensaje_error = document.getElementById('mensaje_error');
+
+        loader.classList.add('loader');
+        mensaje_error.innerHTML = '';
+
         fetch("https://basic-server-one.vercel.app/login", {
             method: "POST",
             headers: {
@@ -105,7 +113,8 @@ window.onload = function () {
                 window.location.href = "./html/dashboard.html";
 
             }else{
-                document.getElementById('mensaje_error').innerHTML = `${data.message}`
+                loader.classList.remove('loader');
+                mensaje_error.innerHTML = `${data.message}`
             }
 
         }

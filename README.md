@@ -42,6 +42,8 @@ Esta función válida que los datos ingresados sean válidos (el único usuario 
 
 - En dashboard.js primero se ejecuta una función que valida el estado de la variable en localStorage "login", si esta es falsa (false), nos redirigirá directamente al login. Así nos aseguramos de que nadie pueda saltarse el login por escribir en el navegador el link: [https://matescarabino.github.io/LPPA_Parcial_2_Scarabino/html/dashboard.html](https://matescarabino.github.io/LPPA_Parcial_2_Scarabino/html/dashboard.html)
 
+- Tanto el login como el dashboard cuentan con una animación de carga mientras se espera el fetch, ya que, haciendo pruebas, me di cuenta de que la gente no entendía que estaba cargando.
+
 ## Construido con 🛠️
 
 - HTML 

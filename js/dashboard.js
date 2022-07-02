@@ -9,6 +9,9 @@ window.onload = function () {
 
 //Metodo GET 
 function obtenerUsuarios() {
+    let loader =  document.getElementById('loader');
+    loader.classList.add('loader');
+
     let url = 'https://basic-server-one.vercel.app/users';
     fetch(url)
         .then(response => response.json())
@@ -16,6 +19,7 @@ function obtenerUsuarios() {
         .catch(error => mostrarError(error))
 
     const mostrarData = (data) => {
+        loader.classList.remove('loader');
 
         let tabla = document.getElementById("tabla");
         tabla.style.display = 'table';
