@@ -47,8 +47,7 @@ function obtenerUsuarios() {
 
 
 function logOut(){
-    localStorage.setItem('login', false);
-    localStorage.setItem('user', '');
+    localStorage.clear();
 
     window.location.href = "../index.html";
 
